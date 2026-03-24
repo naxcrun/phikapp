@@ -8,24 +8,31 @@
     <link rel="icon" type="image/png" href="PHIKAPP.png">
     <link rel="apple-touch-icon" href="PHIKAPP.png">
     
-    <style>
+<style>
+        /* 1. Default styling (Light Mode) */
         body, html { 
             margin: 0; 
             padding: 0; 
             width: 100%; 
             height: 100%; 
             overflow: hidden; 
-            /* Set the background color here so it shows behind the notch */
-            background-color: #1d0c0b; /* CHANGE THIS to match your app's top color */
+            background-color: #FFFFFF; /* Light mode color */
         }
         
+        /* 2. Dark Mode Override */
+        @media (prefers-color-scheme: dark) {
+            body, html {
+                background-color: #1d0c0b; /* Dark mode color */
+            }
+        }
+        
+        /* 3. The rest of your app styling */
         .app-container { 
             width: 100%; 
             height: 100vh; 
             min-height: 600px;
-            /* 2. Added the safe area padding here to push the iframe down safely below the notch */
             padding-top: env(safe-area-inset-top); 
-            box-sizing: border-box; /* Ensures the padding doesn't stretch the container past 100vh */
+            box-sizing: border-box; 
         }
         
         iframe { 
