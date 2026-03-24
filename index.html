@@ -1,21 +1,38 @@
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>PHIKAPP</title>
     
     <link rel="icon" type="image/png" href="PHIKAPP.png">
-    
     <link rel="apple-touch-icon" href="PHIKAPP.png">
     
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
-        .app-container { width: 100%; height: 100vh; min-height: 600px; }
-        iframe { width: 100%; height: 100%; border: none; }
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+            /* Set the background color here so it shows behind the notch */
+            background-color: #1d0c0b; /* CHANGE THIS to match your app's top color */
+        }
+        
+        .app-container { 
+            width: 100%; 
+            height: 100vh; 
+            min-height: 600px;
+            /* 2. Added the safe area padding here to push the iframe down safely below the notch */
+            padding-top: env(safe-area-inset-top); 
+            box-sizing: border-box; /* Ensures the padding doesn't stretch the container past 100vh */
+        }
+        
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+        }
     </style>
 </head>
 <body>
