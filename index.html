@@ -1,60 +1,22 @@
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHIKAPP</title>
     
     <link rel="icon" type="image/png" href="PHIKAPP.png">
+    
     <link rel="apple-touch-icon" href="PHIKAPP.png">
     
-<style>
-        /* 1. Base Lock */
-        body, html { 
-            margin: 0; padding: 0; 
-            width: 100%; height: 100%; 
-            position: fixed; overflow: hidden; 
-            background-color: #1d0c0b; /* Set to your theme color */
-            overscroll-behavior-y: none; touch-action: none; 
-        }
-        
-        /* 2. Flexbox Container (Forces content to the very top) */
-        .app-container { 
-            position: absolute; 
-            top: 0; bottom: 0; left: 0; right: 0; 
-            
-            /* Flexbox ensures the iframe gets pushed to the top edge */
-            display: flex; 
-            flex-direction: column; 
-            justify-content: flex-start; 
-            
-            padding-top: env(safe-area-inset-top); 
-            padding-bottom: env(safe-area-inset-bottom); 
-            box-sizing: border-box; 
-        }
-        
-        /* 3. The iframe */
-        iframe { 
-            width: 100%; 
-            flex-grow: 1; /* Tells the iframe to take all available space */
-            border: none; 
-            display: block; 
-        }
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
+        .app-container { width: 100%; height: 100vh; min-height: 600px; }
+        iframe { width: 100%; height: 100%; border: none; }
     </style>
-<script>
-        // Prevent bounce and pull-to-refresh on older iOS devices
-        document.addEventListener('touchmove', function(event) {
-            // Only prevent default if the target isn't inside the iframe
-            if (event.target.tagName !== 'IFRAME') {
-                event.preventDefault();
-            }
-        }, { passive: false });
-    </script>
 </head>
 <body>
     <div class="app-container">
         <iframe 
-            src="https://apps.powerapps.com/play/388e0f6f-c408-4819-8e4d-4d3775f26f42?tenantId=4130bd39-7c53-419c-b1e5-8758d6d63f21&source=portal&hidenavbar=true"
+            src="https://apps.powerapps.com/play/388e0f6f-c408-4819-8e4d-4d3775f26f42?tenantId=4130bd39-7c53-419c-b1e5-8758d6d63f21&source=portal" 
             title="PhiKAPP Portal"
             allow="geolocation; microphone; camera; fullscreen">
         </iframe>
