@@ -9,51 +9,34 @@
     <link rel="apple-touch-icon" href="PHIKAPP.png">
     
 <style>
-        /* 1. Default styling (Light Mode) */
+        /* 1. Base Lock */
         body, html { 
-            margin: 0; 
-            padding: 0; 
-            width: 100%; 
-            height: 100%; 
-            position: fixed; 
-            overflow: hidden; 
-            
-            /* THE MAGIC FIX: Stops pull-to-refresh and rubber-banding */
-            overscroll-behavior-y: none; 
-            
-            /* Prevents double-tap to zoom */
-            touch-action: none; 
-            
-            background-color: #FFFFFF; 
+            margin: 0; padding: 0; 
+            width: 100%; height: 100%; 
+            position: fixed; overflow: hidden; 
+            background-color: #1d0c0b; /* Set to your theme color */
+            overscroll-behavior-y: none; touch-action: none; 
         }
         
-        /* 2. Dark Mode Override */
-        @media (prefers-color-scheme: dark) {
-            body, html {
-                background-color: #1d0c0b; 
-            }
-        }
-        
-        /* 3. The App Container */
+        /* 2. Flexbox Container (Forces content to the very top) */
         .app-container { 
             position: absolute; 
-            top: 0; 
-            bottom: 0; 
-            left: 0; 
-            right: 0; 
+            top: 0; bottom: 0; left: 0; right: 0; 
+            
+            /* Flexbox ensures the iframe gets pushed to the top edge */
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-start; 
+            
             padding-top: env(safe-area-inset-top); 
             padding-bottom: env(safe-area-inset-bottom); 
             box-sizing: border-box; 
-            
-            /* Prevents accidental text selection if they tap outside the iframe */
-            -webkit-user-select: none; 
-            user-select: none; 
         }
         
-        /* 4. The iframe */
+        /* 3. The iframe */
         iframe { 
             width: 100%; 
-            height: 100%; 
+            flex-grow: 1; /* Tells the iframe to take all available space */
             border: none; 
             display: block; 
         }
