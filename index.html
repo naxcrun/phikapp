@@ -1,26 +1,53 @@
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="theme-color" content="#1d0c0b">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
     <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#1d0c0b" media="(prefers-color-scheme: dark)">
+    
     <title>PHIKAPP</title>
     
     <link rel="icon" type="image/png" href="PHIKAPP.png">
-    
     <link rel="apple-touch-icon" href="PHIKAPP.png">
     
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
-        .app-container { width: 100%; height: 100vh; min-height: 600px; }
-        iframe { width: 100%; height: 100%; border: none; }
+        /* 5. Set the background color here as a backup so no white flashes through */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+            background-color: #FFFFFF; 
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body, html { background-color: #1d0c0b; }
+        }
+
+        /* 6. Ensure the container takes the full height */
+        .app-container { 
+            width: 100%; 
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        iframe { 
+            width: 100%; 
+            flex-grow: 1; 
+            border: none; 
+        }
     </style>
 </head>
 <body>
     <div class="app-container">
         <iframe 
-            src="https://apps.powerapps.com/play/388e0f6f-c408-4819-8e4d-4d3775f26f42?tenantId=4130bd39-7c53-419c-b1e5-8758d6d63f21&source=portal" 
+            src="https://apps.powerapps.com/play/388e0f6f-c408-4819-8e4d-4d3775f26f42?tenantId=4130bd39-7c53-419c-b1e5-8758d6d63f21&source=portal&hidenavbar=true" 
             title="PhiKAPP Portal"
             allow="geolocation; microphone; camera; fullscreen">
         </iframe>
